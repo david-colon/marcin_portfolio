@@ -18,21 +18,24 @@
         <li><a href="#ffilms">feature films</a></li>
         <li><a href="#mvideos">music videos</a></li>
         <li><a href="#docs">documentaries</a></li>
-        <li><a href="mailto:marcin@marcinszocinski.com">contact me</a></li>
+        <li><a href="#contact">contact me</a></li>
       </ul>
     </nav>
 
     <!-- reel -->
     <div class="parent">
-      <div id="reel">
-        <iframe src="https://player.vimeo.com/video/686455590?h=e420191f74" width="100%" height="100%" frameborder="0"
-          allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+      <div class="heading" id="reel">~ REEL ~
+        <hr>
       </div>
+        <iframe src="https://player.vimeo.com/video/686455590?h=e420191f74" width="800" height="600" frameborder="0"
+          allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
     </div>
 
     <!-- feature film -->
     <div class="parent">
-      <div class="heading" id="ffilms">~ FEATURE FILMS ~<hr></div>
+      <div class="heading" id="ffilms">~ FEATURE FILMS ~
+        <hr>
+      </div>
       {% for pic in ffilm %}
       <div class="subheading">{{ ffilm_dict[pic]['title'] }}</div>
       <div class="child"><a href="{{ ffilm_dict[pic]['url'] }}" target="blank"><img
@@ -46,7 +49,9 @@
 
     <!-- music video -->
     <div class="parent">
-      <div class="heading" id="mvideos">~ MUSIC VIDEOS ~<hr></div>
+      <div class="heading" id="mvideos">~ MUSIC VIDEOS ~
+        <hr>
+      </div>
       {% for pic in mvideo %}
       <div class="subheading">{{ mvideo_dict[pic]['title'] }}</div>
       <div class="child"><a href="{{ mvideo_dict[pic]['url'] }}" target="blank"><img
@@ -61,7 +66,9 @@
 
     <!-- documentary -->
     <div class="parent">
-      <div class="heading" id="docs">~ DOCUMENTARIES ~<hr></div>
+      <div class="heading" id="docs">~ DOCUMENTARIES ~
+        <hr>
+      </div>
       {% for pic in doc %}
       <div class="subheading">{{ doc_dict[pic]['title'] }}</div>
       <div class="child"><a href="{{ doc_dict[pic]['url'] }}" target="blank"><img
@@ -72,6 +79,16 @@
             src="static/images/doc/{{ pic }}/3.jpg"></a></div>
       {% endfor %}
     </div>
+
+    <!-- contact -->
+    <div class="parent">
+      <div class="footer" id="contact">
+        ~ CONTACT ME ~
+        <hr width="100%">
+        ✉️ MarcinSzocinski@gmail.com<br>📱 708-369-2068
+      </div>
+    </div>
+
   </div>
 
 </body>

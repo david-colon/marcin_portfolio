@@ -25,6 +25,11 @@ hr{
 /* begin nav portion */
 li{
     margin: auto;
+    padding: 20px;
+}
+
+nav{
+    height: 100vh;
 }
 
 ul{
@@ -32,7 +37,7 @@ ul{
     background: white;
     display: flex;
     flex-wrap: wrap;
-    font-size: 2rem;
+    font-size: 2.5rem;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -57,10 +62,19 @@ div.child{
     width: 1%;
 }
 
+
+div.footer{
+    font-size: 2rem;
+    margin-top: 100px;
+    text-align: right;
+    width: 100%;
+}
+
 div.heading{
     font-size: 4rem;
     margin: auto;
     padding-top: 100px;
+    width: 50%;
 }
 
 div.parent{
@@ -68,14 +82,6 @@ div.parent{
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
-}
-
-div#reel{
-    display: flex;
-    flex-basis: 100%;
-    margin: auto;
-    padding-top: 50px;
-    height: 66vh;
 }
 
 div.subheading{
