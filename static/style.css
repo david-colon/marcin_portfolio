@@ -1,0 +1,94 @@
+/* begin basic style changes to entire page */
+html{
+    font-size: 100%;
+}
+
+body{
+    font-family:  "Poiret One", Tahoma, sans-serif;
+    font-size: 1rem;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+    text-decoration-color: goldenrod;
+}
+
+hr{
+    border: 1px solid goldenrod;
+}
+
+/* begin nav portion */
+li{
+    margin: auto;
+}
+
+ul{
+    align-items: center;
+    background: white;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 2rem;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+/* begin main page layout */
+div.outer{
+    margin: auto;
+    text-align: center;
+    width: 90%;
+}
+
+div.child{
+    flex-basis: 33%;
+    margin: auto;
+    padding: 10 0 10 0;
+    text-align: center;
+    width: 1%;
+}
+
+div.heading{
+    font-size: 4rem;
+    margin: auto;
+    padding-top: 100px;
+}
+
+div.parent{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+div#reel{
+    display: flex;
+    flex-basis: 100%;
+    margin: auto;
+    padding-top: 50px;
+    height: 66vh;
+}
+
+div.subheading{
+    display: flex;
+    flex-basis: 100%;
+    font-size: 2rem;
+    margin: auto;
+    padding-top: 50px;
+}
+
+img{
+    width: 30vw;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}

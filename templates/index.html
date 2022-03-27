@@ -1,0 +1,79 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="../static/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+  <title>MARCIN SZOCINSKI</title>
+</head>
+
+<body>
+
+  <!-- main container div to handle page margins and stuff -->
+  <div class="outer">
+    <nav>
+      <ul>
+        <li><a href="#reel" style="color: goldenrod"><em>marcin szocinski</em></a></li>
+        <li><a href="#ffilms">feature films</a></li>
+        <li><a href="#mvideos">music videos</a></li>
+        <li><a href="#docs">documentaries</a></li>
+        <li><a href="mailto:marcin@marcinszocinski.com">contact me</a></li>
+      </ul>
+    </nav>
+
+    <!-- reel -->
+    <div class="parent">
+      <div id="reel">
+        <iframe src="https://player.vimeo.com/video/686455590?h=e420191f74" width="100%" height="100%" frameborder="0"
+          allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <!-- feature film -->
+    <div class="parent">
+      <div class="heading" id="ffilms">~ FEATURE FILMS ~<hr></div>
+      {% for pic in ffilm %}
+      <div class="subheading">{{ ffilm_dict[pic]['title'] }}</div>
+      <div class="child"><a href="{{ ffilm_dict[pic]['url'] }}" target="blank"><img
+            src="static/images/ffilm/{{ pic }}/1.jpg"></a></div>
+      <div class="child"><a href="{{ ffilm_dict[pic]['url'] }}" target="blank"><img
+            src="static/images/ffilm/{{ pic }}/2.jpg"></a></div>
+      <div class="child"><a href="{{ ffilm_dict[pic]['url'] }}" target="blank"><img
+            src="static/images/ffilm/{{ pic }}/3.jpg"></a></div>
+      {% endfor %}
+    </div>
+
+    <!-- music video -->
+    <div class="parent">
+      <div class="heading" id="mvideos">~ MUSIC VIDEOS ~<hr></div>
+      {% for pic in mvideo %}
+      <div class="subheading">{{ mvideo_dict[pic]['title'] }}</div>
+      <div class="child"><a href="{{ mvideo_dict[pic]['url'] }}" target="blank"><img
+            src="static/images/mvideo/{{ pic }}/1.jpg"></a></div>
+      <div class="child"><a href="{{ mvideo_dict[pic]['url'] }}" target="blank"><img
+            src="static/images/mvideo/{{ pic }}/2.jpg"></a></div>
+      <div class="child"><a href="{{ mvideo_dict[pic]['url'] }}" target="blank"><img
+            src="static/images/mvideo/{{ pic }}/3.jpg"></a></div>
+      {% endfor %}
+    </div>
+
+
+    <!-- documentary -->
+    <div class="parent">
+      <div class="heading" id="docs">~ DOCUMENTARIES ~<hr></div>
+      {% for pic in doc %}
+      <div class="subheading">{{ doc_dict[pic]['title'] }}</div>
+      <div class="child"><a href="{{ doc_dict[pic]['url'] }}" target="blank"><img
+            src="static/images/doc/{{ pic }}/1.jpg"></a></div>
+      <div class="child"><a href="{{ doc_dict[pic]['url'] }}" target="blank"><img
+            src="static/images/doc/{{ pic }}/2.jpg"></a></div>
+      <div class="child"><a href="{{ doc_dict[pic]['url'] }}" target="blank"><img
+            src="static/images/doc/{{ pic }}/3.jpg"></a></div>
+      {% endfor %}
+    </div>
+  </div>
+
+</body>
+
+</html>
