@@ -74,7 +74,7 @@ div.heading{
     font-size: 4rem;
     margin: auto;
     padding-top: 100px;
-    width: 50%;
+    /* width: 50%; */
 }
 
 div.parent{
