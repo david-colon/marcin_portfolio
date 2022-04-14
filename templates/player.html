@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block content %}
+<nav>
+    <ul class="nav" id="player">
+        <li><a href="{{ url_for('home')}}"><em>
+                    << go back</em></a></li>
+    </ul>
+</nav>
+
+{% if videotype == 'ffilm' %}
+<div class="subheading">{{ ffilm_dict[video]['title'] }} ~
+    Director: {{ ffilm_dict[video]['director'] }} ~
+    Runtime: {{ ffilm_dict[video]['runtime'] }}</div>
+    
+
+<div class="player">
+    <iframe src="{{ ffilm_dict[video]['url'] }}" width="100%" height="100%" frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+    {% if video in festivals_dict %}
+    {% for image in festivals_dict[video] %}
+    <img src="../{{ image }}" class="festival">
+    {% endfor %}
+    {% endif %}
+</div>
+{% endif %}
+
+
+{% if videotype == 'mvideo' %}
+<div class="subheading">{{ mvideo_dict[video]['title'] }} ~
+    Director: {{ mvideo_dict[video]['director'] }} ~
+    Runtime: {{ mvideo_dict[video]['runtime'] }}</div>
+    
+
+<div class="player">
+    <iframe src="{{ mvideo_dict[video]['url'] }}" width="100%" height="100%" frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+    {% if video in festivals_dict %}
+    {% for image in festivals_dict[video] %}
+    <img src="../{{ image }}" class="festival">
+    {% endfor %}
+    {% endif %}
+</div>
+{% endif %}
+
+
+{% if videotype == 'doc' %}
+<div class="subheading">{{ doc_dict[video]['title'] }} ~
+    Director: {{ doc_dict[video]['director'] }} ~
+    Runtime: {{ doc_dict[video]['runtime'] }}</div>
+    
+
+<div class="player">
+    <iframe src="{{ doc_dict[video]['url'] }}" width="100%" height="100%" frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+    {% if video in festivals_dict %}
+    {% for image in festivals_dict[video] %}
+    <img src="../{{ image }}" class="festival">
+    {% endfor %}
+    {% endif %}
+</div>
+{% endif %}
+
+
+{% endblock %}

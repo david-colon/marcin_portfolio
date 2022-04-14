@@ -1,96 +1,90 @@
-<html>
+{% extends "base.html" %}
+{% block content %}
+<nav>
+  <ul class="nav" id="nav-header">
+    <li><a href="#reel" style="color: goldenrod"><em>marcin szocinski</em></a></li>
+    <li><a href="#reel">reel</a></li>
+    <li><a href="#ffilms">feature films</a></li>
+    <li><a href="#mvideos">music videos</a></li>
+    <li><a href="#docs">documentaries</a></li>
+    <li><a href="#contact">contact me</a></li>
+  </ul>
+</nav>
 
-<head>
-  <link rel="stylesheet" href="../static/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
-  <title>MARCIN SZOCINSKI</title>
-</head>
-
-<body>
-
-  <!-- main container div to handle page margins and stuff -->
-  <div class="outer">
-    <nav>
-      <ul>
-        <li><a href="#reel" style="color: goldenrod"><em>marcin szocinski</em></a></li>
-        <li><a href="#ffilms">feature films</a></li>
-        <li><a href="#mvideos">music videos</a></li>
-        <li><a href="#docs">documentaries</a></li>
-        <li><a href="#contact">contact me</a></li>
-      </ul>
-    </nav>
-
-    <!-- reel -->
-    <div class="parent" id="reel">
-      <div class="heading">~ REEL ~
-        <hr>
-      </div>
-      <iframe src="https://player.vimeo.com/video/686455590?h=e420191f74" width="800" height="600" frameborder="0"
-        allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-    </div>
-
-    <!-- feature film -->
-    <div class="parent" id="ffilms">
-      <div class="heading">~ FEATURE FILMS ~
-        <hr>
-      </div>
-      {% for pic in ffilm %}
-      <div class="subheading">{{ ffilm_dict[pic]['title'] }}</div>
-      <div class="child"><a href="{{ ffilm_dict[pic]['url'] }}" target="blank"><img
-            src="static/images/ffilm/{{ pic }}/1.jpg"></a></div>
-      <div class="child"><a href="{{ ffilm_dict[pic]['url'] }}" target="blank"><img
-            src="static/images/ffilm/{{ pic }}/2.jpg"></a></div>
-      <div class="child"><a href="{{ ffilm_dict[pic]['url'] }}" target="blank"><img
-            src="static/images/ffilm/{{ pic }}/3.jpg"></a></div>
-      {% endfor %}
-    </div>
-
-    <!-- music video -->
-    <div class="parent" id="mvideos">
-      <div class="heading">~ MUSIC VIDEOS ~
-        <hr>
-      </div>
-      {% for pic in mvideo %}
-      <div class="subheading">{{ mvideo_dict[pic]['title'] }}</div>
-      <div class="child"><a href="{{ mvideo_dict[pic]['url'] }}" target="blank"><img
-            src="static/images/mvideo/{{ pic }}/1.jpg"></a></div>
-      <div class="child"><a href="{{ mvideo_dict[pic]['url'] }}" target="blank"><img
-            src="static/images/mvideo/{{ pic }}/2.jpg"></a></div>
-      <div class="child"><a href="{{ mvideo_dict[pic]['url'] }}" target="blank"><img
-            src="static/images/mvideo/{{ pic }}/3.jpg"></a></div>
-      {% endfor %}
-    </div>
-
-
-    <!-- documentary -->
-    <div class="parent" id="docs">
-      <div class="heading">~ DOCUMENTARIES ~
-        <hr>
-      </div>
-      {% for pic in doc %}
-      <div class="subheading">{{ doc_dict[pic]['title'] }}</div>
-      <div class="child"><a href="{{ doc_dict[pic]['url'] }}" target="blank"><img
-            src="static/images/doc/{{ pic }}/1.jpg"></a></div>
-      <div class="child"><a href="{{ doc_dict[pic]['url'] }}" target="blank"><img
-            src="static/images/doc/{{ pic }}/2.jpg"></a></div>
-      <div class="child"><a href="{{ doc_dict[pic]['url'] }}" target="blank"><img
-            src="static/images/doc/{{ pic }}/3.jpg"></a></div>
-      {% endfor %}
-    </div>
-
-    <!-- contact -->
-    <div class="parent">
-      <div class="footer" id="contact">
-        ~ CONTACT ME ~
-        <hr id="footer">
-        ✉️ MarcinSzocinski@gmail.com<br>📱 708-369-2068
-      </div>
-    </div>
-
+<!-- reel -->
+<div class="parent" id="reel">
+  <div class="heading">~ REEL ~
+    <hr>
   </div>
+  <iframe src="https://player.vimeo.com/video/686455590?h=e420191f74" width="100%" height="768" frameborder="0"
+    allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+</div>
 
-</body>
+<!-- feature film -->
+<div class="parent" id="ffilms">
+  <div class="heading">~ FEATURE FILMS ~
+    <hr>
+  </div>
+  {% for directory_name in ffilm %}
+  <div class="subheading">{{ ffilm_dict[directory_name]['title'] }} ~
+    Director: {{ ffilm_dict[directory_name]['director'] }} ~
+    Runtime: {{ ffilm_dict[directory_name]['runtime'] }}</div>
+  <div class="child"><a href="{{ url_for('player', video=directory_name, videotype='ffilm') }}" target="blank"><img
+        src="static/images/ffilm/{{ directory_name }}/1.jpg"></a></div>
+  <div class="child"><a href="{{ url_for('player', video=directory_name, videotype='ffilm') }}" target="blank"><img
+        src="static/images/ffilm/{{ directory_name }}/2.jpg"></a></div>
+  <div class="child"><a href="{{ url_for('player', video=directory_name, videotype='ffilm') }}" target="blank"><img
+        src="static/images/ffilm/{{ directory_name }}/3.jpg"></a></div>
+    {% if directory_name in festivals_dict %}
+      {% for image in festivals_dict[directory_name] %}
+        <img src="{{ image }}" class="festival">
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+</div>
 
-</html>
+<!-- music video -->
+<div class="parent" id="mvideos">
+  <div class="heading">~ MUSIC VIDEOS ~
+    <hr>
+  </div>
+  {% for directory_name in mvideo %}
+  <div class="subheading">{{ mvideo_dict[directory_name]['title'] }}</div>
+  <div class="child"><a href="{{ url_for('player', video=directory_name, videotype='mvideo') }}" target="blank"><img
+        src="static/images/mvideo/{{ directory_name }}/1.jpg"></a></div>
+  <div class="child"><a href="{{ url_for('player', video=directory_name, videotype='mvideo') }}" target="blank"><img
+        src="static/images/mvideo/{{ directory_name }}/2.jpg"></a></div>
+  <div class="child"><a href="{{ url_for('player', video=directory_name, videotype='mvideo') }}" target="blank"><img
+        src="static/images/mvideo/{{ directory_name }}/3.jpg"></a></div>
+  {% endfor %}
+</div>
+
+
+<!-- documentary -->
+<div class="parent" id="docs">
+  <div class="heading">~ DOCUMENTARIES ~
+    <hr>
+  </div>
+  {% for directory_name in doc %}
+  <div class="subheading">{{ doc_dict[directory_name]['title'] }}</div>
+  <div class="child"><a href="{{ url_for('player', video=directory_name, videotype='doc') }}" target="blank"><img
+        src="static/images/doc/{{ directory_name }}/1.jpg"></a></div>
+  <div class="child"><a href="{{ url_for('player', video=directory_name, videotype='doc') }}" target="blank"><img
+        src="static/images/doc/{{ directory_name }}/2.jpg"></a></div>
+  <div class="child"><a href="{{ url_for('player', video=directory_name, videotype='doc') }}" target="blank"><img
+        src="static/images/doc/{{ directory_name }}/3.jpg"></a></div>
+  {% endfor %}
+
+</div>
+
+<!-- contact -->
+<div class="parent">
+  <div class="footer" id="contact">
+    ~ CONTACT ME ~
+    <hr id="footer">
+    ✉️ MarcinSzocinski@gmail.com<br>📱 708-369-2068
+  </div>
+</div>
+
+</div>
+{% endblock %}

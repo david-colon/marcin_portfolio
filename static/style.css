@@ -34,22 +34,27 @@ li{
 }
 
 nav{
-    height: 100vh;
+    /* height: 100vh; */
 }
 
-ul{
+ul.nav{
     align-items: center;
     background: white;
     display: flex;
     flex-wrap: wrap;
     font-size: 2.5rem;
     list-style-type: none;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
+    z-index: 999;
+}
+
+ul#player{
+    position: static;
 }
 
 /* begin main page layout */
@@ -86,8 +91,8 @@ div.heading{
 div.parent{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
     flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 div.subheading{
@@ -103,4 +108,18 @@ img{
     margin: 0;
     padding: 0;
     border: 0;
+}
+
+img.festival{
+    width: 10vw;
+    margin: 5px;
+}
+
+div#reel{
+    /* margin-top: 33vh; */
+}
+
+div.player{
+    margin: 0;
+    padding: 0;
 }
