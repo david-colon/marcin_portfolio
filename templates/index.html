@@ -29,11 +29,11 @@
   <div class="subheading">{{ ffilm_dict[directory_name]['title'] }} ~
     Director: {{ ffilm_dict[directory_name]['director'] }} ~
     Runtime: {{ ffilm_dict[directory_name]['runtime'] }}</div>
-  <div class="child"><a href="{{ url_for('player', video=directory_name, videotype='ffilm') }}" target="blank"><img
+  <div class="child"><a href="{{ url_for('player', video=directory_name, videotype='ffilm') }}"><img
         src="static/images/ffilm/{{ directory_name }}/1.jpg"></a></div>
-  <div class="child"><a href="{{ url_for('player', video=directory_name, videotype='ffilm') }}" target="blank"><img
+  <div class="child"><a href="{{ url_for('player', video=directory_name, videotype='ffilm') }}"><img
         src="static/images/ffilm/{{ directory_name }}/2.jpg"></a></div>
-  <div class="child"><a href="{{ url_for('player', video=directory_name, videotype='ffilm') }}" target="blank"><img
+  <div class="child"><a href="{{ url_for('player', video=directory_name, videotype='ffilm') }}"><img
         src="static/images/ffilm/{{ directory_name }}/3.jpg"></a></div>
     {% if directory_name in festivals_dict %}
       {% for image in festivals_dict[directory_name] %}
@@ -50,11 +50,11 @@
   </div>
   {% for directory_name in mvideo %}
   <div class="subheading">{{ mvideo_dict[directory_name]['title'] }}</div>
-  <div class="child"><a href="{{ url_for('player', video=directory_name, videotype='mvideo') }}" target="blank"><img
+  <div class="child"><a href="{{ url_for('player', video=directory_name, videotype='mvideo') }}"><img
         src="static/images/mvideo/{{ directory_name }}/1.jpg"></a></div>
-  <div class="child"><a href="{{ url_for('player', video=directory_name, videotype='mvideo') }}" target="blank"><img
+  <div class="child"><a href="{{ url_for('player', video=directory_name, videotype='mvideo') }}"><img
         src="static/images/mvideo/{{ directory_name }}/2.jpg"></a></div>
-  <div class="child"><a href="{{ url_for('player', video=directory_name, videotype='mvideo') }}" target="blank"><img
+  <div class="child"><a href="{{ url_for('player', video=directory_name, videotype='mvideo') }}"><img
         src="static/images/mvideo/{{ directory_name }}/3.jpg"></a></div>
   {% endfor %}
 </div>
@@ -67,11 +67,11 @@
   </div>
   {% for directory_name in doc %}
   <div class="subheading">{{ doc_dict[directory_name]['title'] }}</div>
-  <div class="child"><a href="{{ url_for('player', video=directory_name, videotype='doc') }}" target="blank"><img
+  <div class="child"><a href="{{ url_for('player', video=directory_name, videotype='doc') }}"><img
         src="static/images/doc/{{ directory_name }}/1.jpg"></a></div>
-  <div class="child"><a href="{{ url_for('player', video=directory_name, videotype='doc') }}" target="blank"><img
+  <div class="child"><a href="{{ url_for('player', video=directory_name, videotype='doc') }}"><img
         src="static/images/doc/{{ directory_name }}/2.jpg"></a></div>
-  <div class="child"><a href="{{ url_for('player', video=directory_name, videotype='doc') }}" target="blank"><img
+  <div class="child"><a href="{{ url_for('player', video=directory_name, videotype='doc') }}"><img
         src="static/images/doc/{{ directory_name }}/3.jpg"></a></div>
   {% endfor %}
 
