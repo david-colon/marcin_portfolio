@@ -1,20 +1,31 @@
 {% extends "base.html" %}
 {% block content %}
+
+<!-- name & job title -->
+<ul class="name">
+  <li class="first"><a href="#top" style="color: goldenrod">MARCIN SZOCINSKI</a></li>
+  <li class="last">DIRECTOR OF PHOTOGRAPHY</li>
+</ul>
+
+<!-- navigation -->
 <nav>
   <ul class="nav" id="nav-header">
-    <li><a href="#reel" style="color: goldenrod"><em>marcin szocinski</em></a></li>
-    <li><a href="#reel">reel</a></li>
+    <li class="first"><a href="#reel">reel</a></li>
     <li><a href="#ffilms">feature films</a></li>
     <li><a href="#mvideos">music videos</a></li>
-    <li><a href="#docs">documentaries</a></li>
-    <li><a href="#contact">contact me</a></li>
+    <li class="last"><a href="#docs">documentaries</a></li>
   </ul>
 </nav>
 
+<!-- bio -->
+<div class="parent" id="bio">
+  <p>Marcin Szocinski was born in Poland where he explored different art forms including film and theater. At the age of 17 he migrated to Chicago and soon after attended university, where he studied cinematography. Over the years, his work in the film/TV industry has enabled Marcin to travel extensively and experience many diverse productions. He immersed himself in an array of many cultures working with international directors and crews. This unique experience has shaped his special visual language. He is currently based in Los Angeles.<br><br><a href="mailto:MarcinSzocinski@gmail.com" id="email">MarcinSzocinski@gmail.com</a><br><br>+1 708 369 2068</p>
+</div>
+
 <!-- reel -->
 <div class="parent" id="reel">
-  <div class="heading">~ REEL ~
-    <hr>
+  <div class="heading">
+    <hr>~ REEL ~<hr>
   </div>
   <iframe src="https://player.vimeo.com/video/686455590?h=e420191f74" width="100%" height="768" frameborder="0"
     allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
@@ -22,8 +33,8 @@
 
 <!-- feature film -->
 <div class="parent" id="ffilms">
-  <div class="heading">~ FEATURE FILMS ~
-    <hr>
+  <div class="heading">
+    <hr>~ FEATURE FILMS ~<hr>
   </div>
   {% for directory_name in ffilm %}
   <div class="subheading">{{ ffilm_dict[directory_name]['title'] }} ~
@@ -45,8 +56,8 @@
 
 <!-- music video -->
 <div class="parent" id="mvideos">
-  <div class="heading">~ MUSIC VIDEOS ~
-    <hr>
+  <div class="heading">
+    <hr>~ MUSIC VIDEOS ~<hr>
   </div>
   {% for directory_name in mvideo %}
   <div class="subheading">{{ mvideo_dict[directory_name]['title'] }}</div>
@@ -59,11 +70,10 @@
   {% endfor %}
 </div>
 
-
 <!-- documentary -->
 <div class="parent" id="docs">
-  <div class="heading">~ DOCUMENTARIES ~
-    <hr>
+  <div class="heading">
+    <hr>~ DOCUMENTARIES ~<hr>
   </div>
   {% for directory_name in doc %}
   <div class="subheading">{{ doc_dict[directory_name]['title'] }}</div>
@@ -77,14 +87,4 @@
 
 </div>
 
-<!-- contact -->
-<div class="parent">
-  <div class="footer" id="contact">
-    ~ CONTACT ME ~
-    <hr id="footer">
-    ✉️ MarcinSzocinski@gmail.com<br>📱 708-369-2068
-  </div>
-</div>
-
-</div>
 {% endblock %}

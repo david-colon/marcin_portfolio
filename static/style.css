@@ -13,6 +13,10 @@ a{
     text-decoration: none;
 }
 
+a#email{
+    color: goldenrod;
+}
+
 a:hover{
     text-decoration: underline;
     text-decoration-color: goldenrod;
@@ -30,15 +34,33 @@ hr#footer{
 /* begin nav portion */
 li{
     margin: auto;
-    padding: 20px;
+    /* padding: 20px; */
 }
 
-nav{
-    /* height: 100vh; */
+li.first{
+    margin-left: 5%;
+}
+
+li.last{
+    margin-right: 5%;
+}
+
+ul.name{
+    background: white;
+    display: flex;
+    flex-wrap: nowrap;
+    font-size: 2.5rem;
+    list-style-type: none;
+    margin: auto;
+    padding: 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 999;
 }
 
 ul.nav{
-    align-items: center;
     background: white;
     display: flex;
     flex-wrap: wrap;
@@ -47,7 +69,7 @@ ul.nav{
     margin: 0 auto;
     padding: 0;
     position: fixed;
-    top: 0;
+    bottom: 0;
     left: 0;
     right: 0;
     z-index: 999;
@@ -64,6 +86,7 @@ div.outer{
     width: 90%;
 }
 
+/* used for each screengrab / pic */
 div.child{
     flex-basis: 33%;
     margin: auto;
@@ -72,14 +95,7 @@ div.child{
     width: 1%;
 }
 
-
-div.footer{
-    font-size: 2rem;
-    margin-top: 100px;
-    text-align: right;
-    width: 100%;
-}
-
+/* reel, feature film, music videos, etc. */
 div.heading{
     display: block;
     font-size: 4rem;
@@ -88,6 +104,7 @@ div.heading{
     width: 100%;
 }
 
+/* holds the content for each main category: bio, reel, feature film, music video, doc */
 div.parent{
     display: flex;
     flex-direction: row;
@@ -95,6 +112,7 @@ div.parent{
     justify-content: space-around;
 }
 
+/* use for artist/director name, title of video, runtime, etc. */
 div.subheading{
     display: flex;
     flex-basis: 100%;
@@ -115,8 +133,19 @@ img.festival{
     margin: 5px;
 }
 
+div#bio{
+    /* border: 1px solid black; */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.25rem;
+    font-weight: lighter;
+    /* height: 100vh; */
+    margin-top: 48vh;
+    text-align: justify;
+    width: 66%;
+}
+
 div#reel{
-    /* margin-top: 33vh; */
+    /* margin-top: 100vh; */
 }
 
 div.player{

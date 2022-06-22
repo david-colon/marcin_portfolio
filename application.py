@@ -91,7 +91,7 @@ ffilm_dict = {
     },
 
     "03 watch me kill": {
-        "title": "Watch me Kill",
+        "title": "Watch Me Kill",
         "director": "T. A. Acierto",
         "runtime": "114 min",
         "url": "https://player.vimeo.com/video/271733565?h=eba5988977"
@@ -152,4 +152,4 @@ def player(video, videotype):
 if __name__ == '__main__':
     # run() method of Flask class runs the application
     # on the local development server.
-    application.run("localhost", debug=False)
+    application.run("localhost", debug=False) # CHANGE TO FALSE PRIOR TO PUSHING
